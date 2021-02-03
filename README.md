@@ -15,4 +15,4 @@ First download the application from GitHub and use one of the following two meth
 
 This will get the server up and running. The command line should look simmlar to the picture below.
 
-![Spring Output](/Images/SpringOutput.png)
+![Spring Output](https://github.com/chris-madden/Spring-Rest-Database/blob/main/Images/SpringOutput.PNG)

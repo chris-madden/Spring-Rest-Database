@@ -1,0 +1,177 @@
+- This file contains the JSON which is sent to the REST backend and performs operations on the database.
+- If done in order from top to bottom then all works.
+- There are many kinks in this application due to time restraints but this gives an example of what can be done.
+- Each use case is stated, followed by the request and url and the JSON to send.
+- Any application which can send requests in JSON format can be used, however, this was tested using Postman and proved 
+  an excellent aid in testing.
+
+-------------------
+ADD PERSON USE CASE
+-------------------
+
+POST - http://localhost:8080/person
+
+{
+    "id": "1",
+    "firstName": "Chris",
+    "lastName": "Madden",
+    "addresses": [
+        {
+            "id": "1",
+            "street": "Main",
+            "city": "Galway",
+            "postcode": "H80G45"
+        }
+    ]
+}
+
+--------------------
+EDIT PERSON USE CASE
+--------------------
+
+PUT - http://localhost:8080/person
+
+{
+    "id": "1",
+    "firstName": "Mark",
+    "lastName": "Little",
+    "addresses": [
+        {
+            "id": "1",
+            "street": "Main",
+            "city": "Cork",
+            "postcode": "H80G45"
+        }
+    ]
+}
+
+----------------------
+DELETE PERSON USE CASE
+----------------------
+
+DELETE - http://localhost:8080/person/1
+
+--------------------
+ADD ADDRESS USE CASE
+--------------------
+
+POST - http://localhost:8080/address
+
+{
+    "id": "2",
+    "street": "Main",
+    "city": "Limerick",
+    "postcode": "H12H45"
+}
+
+-----------------------
+DELETE ADDRESS USE CASE
+-----------------------
+
+DELETE - http://localhost:8080/address/2
+
+{
+    "id": "2",
+    "street": "Main",
+    "city": "Limerick",
+    "postcode": "H12H45"
+}
+
+--------------------------------------
+ADD ADDRESS WITH REFERENTIAL INTEGRITY
+--------------------------------------
+
+POST - http://localhost:8080/person
+
+{
+    "id": "2",
+    "firstName": "John",
+    "lastName": "Doe",
+    "addresses": [
+        {
+            "id": "3",
+            "street": "Main",
+            "city": "Dublin",
+            "postcode": "H12H45"
+        }
+    ]
+}
+
+PUT - http://localhost:8080/person
+
+{
+    "id": "2",
+    "firstName": "John",
+    "lastName": "Doe",
+    "addresses": [
+        {
+            "id": "3",
+            "street": "Main",
+            "city": "Dublin",
+            "postcode": "H12H45"
+        },
+        {
+            "id": "4",
+            "street": "Main",
+            "city": "Galway",
+            "postcode": "H44K45"
+        }
+    ]
+}
+
+
+-----------------------
+Count Number Of Persons
+-----------------------
+
+GET http://localhost:8080/person/count
+
+------------
+List Persons
+------------
+
+GET http://localhost:8080/person
+
+--------------------
+List Specific Person
+--------------------
+
+GET http://localhost:8080/person/2
+
+------------------
+Validation Example
+------------------
+
+DELETE ALL PERSONS IN DB FIRST (Below Method) or TRY TO POST PERSON WITH SAME ID
+
+POST http://localhost:8080/person
+
+{
+    "id": "1",
+    "firstName": "Chris",
+    "lastName": "Madden",
+    "addresses": [
+        {
+            "id": "1",
+            "street": "Main",
+            "city": "Galway",
+            "postcode": "H80G45"
+        }
+    ]
+}
+
+POST http://localhost:8080/person
+
+{
+    "id": "1",
+    "firstName": "Chris",
+    "lastName": "Madden",
+    "addresses": [
+        {
+            "id": "1",
+            "street": "Main",
+            "city": "Galway",
+            "postcode": "H80G45"
+        }
+    ]
+}

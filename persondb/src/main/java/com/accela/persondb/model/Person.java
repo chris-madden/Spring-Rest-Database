@@ -21,40 +21,49 @@ public class Person {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Address> addresses;
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 
-    public List<Address> getAddresses() {
+    public List<Address> getAddresses()
+    {
         return addresses;
     }
 
-    public void setAddresses(List<Address> addresses) {
+    public void setAddresses(List<Address> addresses)
+    {
         this.addresses = addresses;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Person{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +

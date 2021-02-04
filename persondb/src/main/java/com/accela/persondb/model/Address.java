@@ -20,19 +20,23 @@ public class Address {
     @Column(name = "postcode")
     private String postcode;
 
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getStreet() {
+    public String getStreet()
+    {
         return street;
     }
 
-    public void setStreet(String street) {
+    public void setStreet(String street)
+    {
         this.street = street;
     }
 
@@ -40,20 +44,24 @@ public class Address {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(String city)
+    {
         this.city = city;
     }
 
-    public String getPostcode() {
+    public String getPostcode()
+    {
         return postcode;
     }
 
-    public void setPostcode(String postcode) {
+    public void setPostcode(String postcode)
+    {
         this.postcode = postcode;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Address{" +
                 "id=" + id +
                 ", street='" + street + '\'' +

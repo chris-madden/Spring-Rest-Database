@@ -27,6 +27,18 @@ public class PersonService {
         return personRepository.findById(id).get();
     }
 
+    public ResponseEntity<Person> create(Person person)
+    {
+        if(!personRepository.findById(person.getId()).isPresent())
+        {
+            return new ResponseEntity<>(personRepository.save(person), HttpStatus.OK);
+        }
+        else
+        {
+            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
+        }
+    }
+
     public ResponseEntity<Person> update(Person person)
     {
         if(personRepository.findById(person.getId()).isPresent())
@@ -42,18 +54,6 @@ public class PersonService {
     public long countPersons()
     {
         return personRepository.count();
-    }
-
-    public ResponseEntity<Person> create(Person person)
-    {
-        if(!personRepository.findById(person.getId()).isPresent())
-        {
-            return new ResponseEntity<>(personRepository.save(person), HttpStatus.OK);
-        }
-        else
-        {
-            return new ResponseEntity<>(person, HttpStatus.BAD_REQUEST);
-        }
     }
 
     public void delete(int id)

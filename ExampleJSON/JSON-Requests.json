@@ -4,6 +4,7 @@
 - Each use case is stated, followed by the request and url and the JSON to send.
 - Any application which can send requests in JSON format can be used, however, this was tested using Postman and proved 
   an excellent aid in testing.
+- Note that the id is not required in the JSON, I've used it here to allow me to see more quickly what ID's are in the DB
 
 -------------------
 ADD PERSON USE CASE

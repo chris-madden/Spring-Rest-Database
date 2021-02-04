@@ -1,6 +1,10 @@
 # Spring-Rest-Database
 Spring REST application which stores peoples information into a database.
 
+## Author Details
+**Name:** Chris Madden
+**GitHub:** https://github.com/chris-madden 
+
 ## Prerequisites
 This application requires the user to have the following technologies
 - Java 8 or higher

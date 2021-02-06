@@ -3,6 +3,7 @@ package com.accela.persondb.controller;
 import com.accela.persondb.model.Address;
 import com.accela.persondb.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,8 +29,16 @@ public class AddressController {
     @PostMapping("/address")
     private int saveAddress(@RequestBody Address address)
     {
-        addressService.saveOrUpdate(address);
+        addressService.createAddress(address);
         return address.getId();
+    }
+
+    @PutMapping("/address")
+    private ResponseEntity<Address> updateAddress(@RequestBody Address address)
+    {
+        return addressService.update(address);
+        //addressService.saveOrUpdate(address);
+        //return address.getId();
     }
 
     @DeleteMapping("/address/{id}")

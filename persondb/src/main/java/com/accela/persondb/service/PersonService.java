@@ -18,7 +18,7 @@ public class PersonService {
     public List<Person> getAllPersons()
     {
         List<Person> persons = new ArrayList<>();
-        personRepository.findAll().forEach(person -> persons.add(person));
+        personRepository.findAll().forEach(persons::add);
         return persons;
     }
 
@@ -27,7 +27,7 @@ public class PersonService {
         return personRepository.findById(id).get();
     }
 
-    public ResponseEntity<Person> create(Person person)
+    public ResponseEntity<Person> createPerson(Person person)
     {
         if(!personRepository.findById(person.getId()).isPresent())
         {
@@ -39,7 +39,7 @@ public class PersonService {
         }
     }
 
-    public ResponseEntity<Person> update(Person person)
+    public ResponseEntity<Person> updatePerson(Person person)
     {
         if(personRepository.findById(person.getId()).isPresent())
         {

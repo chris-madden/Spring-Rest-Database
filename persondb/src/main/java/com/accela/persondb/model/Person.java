@@ -1,6 +1,7 @@
 package com.accela.persondb.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -12,9 +13,11 @@ public class Person {
     @Column(name = "id", nullable = false)
     private int id;
 
+    @NotBlank
     @Column(name = "first_name")
     private String firstName;
 
+    @NotBlank
     @Column(name = "last_name")
     private String lastName;
 

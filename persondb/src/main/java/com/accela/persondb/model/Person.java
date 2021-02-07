@@ -24,6 +24,20 @@ public class Person {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Address> addresses;
 
+    public Person() {
+    }
+
+    public Person(@NotBlank String firstName, @NotBlank String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Person(@NotBlank String firstName, @NotBlank String lastName, List<Address> addresses) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.addresses = addresses;
+    }
+
     public int getId()
     {
         return id;
